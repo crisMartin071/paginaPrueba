@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Peliculas | CriticFilms</title>
+    <script src="style/bootstrap/dist/js/bootstrap.bundle.min.js" defer></script>
+    <link rel="icon" type="image/png" href="../images/criticFilms.png">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="../style/scss/customGuardado.css" />
+</head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-0TZZPCYMMK"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-0TZZPCYMMK');
+</script>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        var popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'))
+        popoverTriggerList.forEach(function (el) {
+            new bootstrap.Popover(el)
+        })
+    })
+
+    document.addEventListener('DOMContentLoaded', function () {
+        var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+        tooltipTriggerList.forEach(function (el) {
+            new bootstrap.Tooltip(el)
+        })
+    })
+</script>
+
+<body>
+    <header class="bg-primary">
+        <div class="container-fluid">
+            <nav class="navbar navbar-expand-md bg-primary">
+                <div class="container-fluid">
+                    <a href="../index.html">
+                        <img src="../images/criticFilms.png" alt="CriticFilms" width="80px" height="80px" />
+                    </a>
+
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav mx-auto mb-2 mb-lg-0 text-center">
+                            <li class="nav-item">
+                                <a class="nav-link" href="../index.html">Inicio</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link active" href="peliculas.html">Peliculas</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="formulario.html">Únete a
+                                    nosotros</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="videoTutorial.html">Vídeo tutorial</a>
+                            </li>
+                        </ul>
+
+                        <form class="d-none d-md-flex" role="search">
+
+                            <input class="form-control me-2" type="search" placeholder="Buscar..." aria-label="Search"
+                                type="text" data-bs-toggle="popover" data-bs-trigger="focus" data-bs-placement="bottom"
+                                data-bs-container="body" title="Función no disponible"
+                                data-bs-content="Actualmente estamos tratando de arreglarlo" />
+
+                            <button type="button" class="btn btn-secondary">
+                                <i class="bi bi-search" style="color: white;"></i>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+    <main class="container-fluid p-2 gap-5">
+        <div class="d-flex justify-content-center align-items-center mb-4" style="min-height: 500px;">
+            <div class="bg-video-container mb-4   position-relative"
+                style="height: 600px; max-width: 1150px; width: 100%;">
+                <video autoplay muted loop playsinline class="w-100 h-100"
+                    style="object-fit: cover; border-radius: 1rem;">
+                    <source src="../images/critic.mp4" type="video/mp4" />
+                    Tu navegador no soporta videos HTML5.
+                </video>
+
+                <div
+                    class="bg-black bg-opacity-50 position-absolute top-0 start-0 w-100 h-100 d-flex justify-content-center align-items-center rounded-3">
+                    <div class="text-center text-white">
+                        <div class="presentacion">
+                            <h1>"Solo hay una manera de evitar la crítica: no hacer nada, no decir nada, y no ser nada"</h1>
+                            <p>— Aristóteles —</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card mx-auto my-4" style="width: 85%;">
+            <div class="card-body">
+                <ul class="nav nav-tabs nav-justified" id="categoriaTab" role="tablist">
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link active" id="tab-accion" data-bs-toggle="tab"
+                            data-bs-target="#pane-accion" type="button" role="tab" aria-controls="pane-accion"
+                            aria-selected="true">
+                            Acción
+                        </button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="tab-comedia" data-bs-toggle="tab" data-bs-target="#pane-comedia"
+                            type="button" role="tab" aria-controls="pane-comedia" aria-selected="false">
+                            Aventuras
+                        </button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="btn-drama" type="button" data-bs-toggle="tooltip"
+                            data-bs-placement="bottom" title="Sección en construcción">
+                            Drama
+                        </button>
+                    </li>
+
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="btn-terror" type="button" data-bs-toggle="tooltip"
+                            data-bs-placement="bottom" title="Sección en construcción">
+                            Terror
+                        </button>
+                    </li>
+                </ul>
+
+                <div class="tab-content mt-3 mb-5" id="categoriaTabContent">
+                    <div class="tab-pane fade show active align-items-center" id="pane-accion" role="tabpanel"
+                        aria-labelledby="tab-accion">
+                        <h5>Películas de Acción</h5>
+                        <br />
+                        <div class="row justify-content-center g-3">
+                            <div class="col-6 col-sm-4 col-md-3 col-lg-2">
+                                <div class="card h-100">
+                                    <img src="../images/rambo.webp" class="card-img-top">
+                                </div>
+                            </div>
+                            <div class="col-6 col-md-4 col-lg-2">
+                                <div class="card h-100">
+                                    <img src="../images/batman.jpg" class="card-img-top">
+                                </div>
+                            </div>
+                            <div class="col-6 col-md-4 col-lg-2">
+                                <div class="card h-100">
+                                    <img src="../images/heat.jpg" class="card-img-top">
+                                </div>
+                            </div>
+                            <div class="col-6 col-md-4 col-lg-2">
+                                <div class="card h-100">
+                                    <img src="../images/johnwick.jpg" class="card-img-top">
+                                </div>
+                            </div>
+                            <div class="col-6 col-md-4 col-lg-2">
+                                <div class="card h-100">
+                                    <img src="../images/madmax.jfif" class="card-img-top">
+                                </div>
+                            </div>
+                            <div class="col-6 col-md-4 col-lg-2">
+                                <div class="card h-100">
+                                    <img src="../images/terminator.jpg" class="card-img-top">
+                                </div>
+                            </div>
+                            <div class="col-6 col-md-4 col-lg-2">
+                                <div class="card h-100">
+                                    <img src="../images/jamebond.webp" class="card-img-top">
+                                </div>
+                            </div>
+                            <div class="col-6 col-md-4 col-lg-2">
+                                <div class="card h-100">
+                                    <img src="../images/predator.webp" class="card-img-top">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tab-pane fade" id="pane-comedia" role="tabpanel" aria-labelledby="tab-comedia">
+                        <h5 class="text-center">Películas de Aventuras</h5>
+                        <div class="row justify-content-center g-3 mt-3">
+                            <div class="col-6 col-sm-4 col-md-3 col-lg-2">
+                                <div class="card h-100">
+                                    <img src="../images/anillos.webp" class="card-img-top">
+                                </div>
+                            </div>
+                            <div class="col-6 col-sm-4 col-md-3 col-lg-2">
+                                <div class="card h-100">
+                                    <img src="../images/apocalypto.webp" class="card-img-top">
+                                </div>
+                            </div>
+                            <div class="col-6 col-sm-4 col-md-3 col-lg-2">
+                                <div class="card h-100">
+                                    <img src="../images/avatar.webp" class="card-img-top">
+                                </div>
+                            </div>
+                            <div class="col-6 col-sm-4 col-md-3 col-lg-2">
+                                <div class="card h-100">
+                                    <img src="../images/jurassicpark.webp" class="card-img-top">
+                                </div>
+                            </div>
+                            <div class="col-6 col-sm-4 col-md-3 col-lg-2">
+                                <div class="card h-100">
+                                    <img src="../images/hobbit.webp" class="card-img-top">
+                                </div>
+                            </div>
+                            <div class="col-6 col-sm-4 col-md-3 col-lg-2">
+                                <div class="card h-100">
+                                    <img src="../images/indinaJone.webp" class="card-img-top">
+                                </div>
+                            </div>
+                            <div class="col-6 col-sm-4 col-md-3 col-lg-2">
+                                <div class="card h-100">
+                                    <img src="../images/jumanji.webp" class="card-img-top">
+                                </div>
+                            </div>
+                            <div class="col-6 col-sm-4 col-md-3 col-lg-2">
+                                <div class="card h-100">
+                                    <img src="../images/piratas.jfif" class="card-img-top">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div class="row justify-content-center mt-5">
+            <div class="col-9 col-md-8 col-lg-6">
+                <h2 class="text-center mb-3">Nuestro ranking histórico</h2>
+                <ul class="list-group d-flex text-center" style="width: 100%; font-size: large;">
+                    <li class="list-group-item">#1 En busca de la felicidad</li>
+                    <li class="list-group-item">#2 Fight Club</li>
+                    <li class="list-group-item">#3 Pulp Fiction</li>
+                    <li class="list-group-item">#4 Goodfellas</li>
+                    <li class="list-group-item">#5 Scarface</li>
+                </ul>
+            </div>
+        </div>
+        <div class="row justify-content-center mt-5">
+            <div class="col-12 col-md-5 col-lg-5">
+                <h1 style="text-align: center;">Próximos estrenos</h1>
+                <table class="table table-striped table-hover">
+                    <thead class="table-dark">
+                        <tr>
+                            <th scope="col">Título</th>
+                            <th scope="col">Género</th>
+                            <th scope="col">Fecha de Estreno</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Super Mario Galaxy</td>
+                            <td>Animación / Aventura</td>
+                            <td>03/04/2026</td>
+                        </tr>
+                        <tr>
+                            <td>Mortal Kombat II</td>
+                            <td>Accion / Fantasia</td>
+                            <td>05/05/2026</td>
+                        </tr>
+                        <tr>
+                            <td>Avengers: Doomsday</td>
+                            <td>Superheroes / Accion</td>
+                            <td>18/12/2026</td>
+                        </tr>
+                        <tr>
+                            <td>Spider-Man: Brand New Day</td>
+                            <td>Superheroes / Accion</td>
+                            <td>31/07/2026</td>
+                        </tr>
+                        <tr>
+                            <td>Masters of the Universe</td>
+                            <td>Superheroes / Fantasia</td>
+                            <td>05/08/2026</td>
+                        </tr>
+                        <tr>
+                            <td>La Momia</td>
+                            <td>Horror sobrenatural</td>
+                            <td>15/12/2025</td>
+                        </tr>
+                        <tr>
+                            <td>Archangel</td>
+                            <td>Acción</td>
+                            <td>06/11/2026</td>
+                        </tr>
+                        <tr>
+                            <td>Toy Story 5</td>
+                            <td>Animación / Familiar</td>
+                            <td>19/06/2026</td>
+                        </tr>
+                        <tr>
+                            <td>Scary Movie 6</td>
+                            <td>Comedia</td>
+                            <td>12/06/2026</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="col-12 col-md-5 col-lg-5">
+                <h1 style="text-align: center;">Próximas críticas</h1>
+                <table class="table table-striped table-hover">
+                    <thead class="table-dark">
+                        <tr>
+                            <th scope="col">Título</th>
+                            <th scope="col">Género</th>
+                            <th scope="col">Fecha de Estreno</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Predator: Badlands</td>
+                            <td>Acción / Ciencia ficción</td>
+                            <td>28/11/2025</td>
+                        </tr>
+                        <tr>
+                            <td>Lilo & Stitch</td>
+                            <td>Ciencia Ficción / Comedia</td>
+                            <td>15/12/2025</td>
+                        </tr>
+                        <tr>
+                            <td>Frankenstein</td>
+                            <td>Terror / drama</td>
+                            <td>30/11/2025</td>
+                        </tr>
+                        <tr>
+                            <td>The Running Man</td>
+                            <td>Acción / Ciencia Ficción</td>
+                            <td>01/12/2025</td>
+                        </tr>
+                        <tr>
+                            <td>Avatar: El Camino del Agua</td>
+                            <td>Ciencia Ficción</td>
+                            <td>15/12/2025</td>
+                        </tr>
+                        <tr>
+                            <td>Hamnet</td>
+                            <td>Histórico</td>
+                            <td>05/12/2025</td>
+                        </tr>
+                        <tr>
+                            <td>Mikaela</td>
+                            <td>Acción / Thriller</td>
+                            <td>10/12/2025</td>
+                        </tr>
+                        <tr>
+                            <td>Now You See Me 3</td>
+                            <td>Acción / Suspense</td>
+                            <td>15/12/2025</td>
+                        </tr>
+                        <tr>
+                            <td>Wicked</td>
+                            <td>Musical / Fantasia</td>
+                            <td>20/12/2025</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </main>
+    <footer class="bg-primary py-4">
+        <div class="container text-center">
+            <h3 class="fw-bold mb-4">CriticFilms</h3>
+
+            <div class="row text-center">
+                <div class="col-12 col-md-4 mb-4">
+                    <h5>Mapa del Sitio</h5>
+                    <ul class="list-unstyled">
+                        <li>
+                            <a href="../index.html" class="text-black text-decoration-none">Inicio</a>
+                        </li>
+                        <li>
+                            <a href="peliculas.html"
+                                class="text-black text-decoration-underline">Películas</a>
+                        </li>
+                        <li>
+                            <a href="formulario.html" class="text-black text-decoration-none">Unete a
+                                nosotros</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="col-12 col-md-4 mb-4">
+                    <h5>Redes Sociales</h5>
+                    <div class="d-flex justify-content-center gap-3">
+                        <a href="https://www.facebook.com/?locale=es_ES%2F" class="text-black">
+                            <i class="fa-brands fa-facebook fa-2x"></i>
+                        </a>
+                        <a href="https://www.instagram.com/" class="text-black">
+                            <i class="fa-brands fa-instagram fa-2x"></i>
+                        </a>
+                        <a href="https://www.youtube.com/" class="text-black">
+                            <i class="fa-brands fa-youtube fa-2x"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-4 mb-4">
+                    <h5>Datos de la Empresa</h5>
+                    <p>Calle Falsa 123<br />Email: contacto@criticfilms.com</p>
+                </div>
+            </div>
+
+            <hr>
+            <small>&copy; 2025 CriticFilms - Todos los derechos reservados</small>
+        </div>
+    </footer>
+</body>
+
+</html>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>

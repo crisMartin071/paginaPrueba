@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CriticFilms</title>
+    <script src="style/bootstrap/dist/js/bootstrap.bundle.min.js" defer></script>
+    <link rel="icon" type="image/png" href="images/criticFilms.png">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="style/scss/customGuardado.css" />
+</head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-0TZZPCYMMK"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-0TZZPCYMMK');
+</script>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        var popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'))
+        popoverTriggerList.forEach(function (el) {
+            new bootstrap.Popover(el)
+        })
+    })
+</script>
+
+<body class="bg-light">
+    <header class="bg-primary">
+        <div class="container-fluid">
+            <nav class="navbar navbar-expand-md bg-primary">
+                <div class="container-fluid">
+                    <a href="index.html">
+                        <img src="images/criticFilms.webp" alt="CriticFilms" width="80px" height="80px" />
+                    </a>
+
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav mx-auto mb-2 mb-lg-0 text-center">
+                            <li class="nav-item">
+                                <a class="nav-link active" href="index.html">Inicio</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="pagSecundarias/peliculas.html">Peliculas</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="pagSecundarias/formulario.html">Únete a
+                                    nosotros</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="pagSecundarias/videoTutorial.html">Vídeo tutorial</a>
+                            </li>
+                        </ul>
+
+                        <form class="d-none d-md-flex" role="search">
+
+                            <input class="form-control me-2" type="search" placeholder="Buscar..." aria-label="Search"
+                                type="text" data-bs-toggle="popover" data-bs-trigger="focus" data-bs-placement="bottom"
+                                data-bs-container="body" title="Función no disponible"
+                                data-bs-content="Actualmente estamos tratando de arreglarlo" />
+
+                            <button type="button" class="btn btn-secondary">
+                                <i class="bi bi-search" style="color: white;"></i>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+    <main class="container-fluid py-4">
+        <div class="d-flex justify-content-center align-items-center mb-5" style="min-height: 500px;">
+            <div class="bg-video-container mb-4   position-relative"
+                style="height: 600px; max-width: 1150px; width: 100%;">
+                <video autoplay muted loop playsinline class="w-100 h-100"
+                    style="object-fit: cover; border-radius: 1rem;">
+                    <source src="images/critic.mp4" type="video/mp4" />
+                    Tu navegador no soporta videos HTML5.
+                </video>
+
+                <div
+                    class="bg-black bg-opacity-50 position-absolute top-0 start-0 w-100 h-100 d-flex justify-content-center align-items-center rounded-3">
+                    <div class="text-center text-white">
+                        <div class="presentacion">
+                            <h1>"Solo hay una manera de evitar la crítica: no hacer nada, no decir nada, y no ser nada"</h1>
+                            <p>— Aristóteles —</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row justify-content-center mt-5">
+            <div class="col-12 col-md-10 col-lg-8">
+                <h1 class="mb-3">Últimas críticas</h1>
+                <div id="articuloCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <a href="pagSecundarias/pagConstruccion.html">
+                                <img src="images/running.jpg" class="d-block w-100 rounded" />
+                            </a>
+                            <div class="p-3">
+                                <h2>'The Running Man' (Edgar Wright)</h2>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <a href="pagSecundarias/pagConstruccion.html">
+                                <img src="images/f1.webp" class="d-block w-100 rounded" />
+                            </a>
+                            <div class="p-3">
+                                <h2>'F1'</h2>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <a href="pagSecundarias/pagConstruccion.html">
+                                <img src="images/una-batalla-tras-otra.jpg" class="d-block w-100 rounded" />
+                            </a>
+                            <div class="p-3">
+                                <h2>'Una batalla tras otra'</h2>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="parrafo mt-5">
+            <h1>Unete a nosotros</h1>
+            <p>Suscribete y recibe nuestra notificaciones</p>
+        </div>
+        <div class="row g-3 mb-5" id="usuarioAdmin">
+            <div class="col-6 col-md-4 col-lg-3">
+                <div class="card h-100">
+                    <a href="pagSecundarias/formulario.html#parrafoForm">
+                        <img src="images/f1.jfif" class="card-img-top" />
+                    </a>
+                    <div class="card-body text-center">Usuario</div>
+                </div>
+            </div>
+
+            <div class="col-6 col-md-4 col-lg-3">
+                <div class="card h-100">
+                    <a href="pagSecundarias/formulario.html#parrafoForm">
+                        <img src="images/scarface_219x231.jpg" class="card-img-top" />
+                    </a>
+                    <div class="card-body text-center">Critico</div>
+                </div>
+            </div>
+        </div>
+        <div class="parrafo mt-5">
+            <h1>¿Que quieres ver?</h1>
+            <p>Te mostramos las mejores peliculas segun la crítica</p>
+        </div>
+        <div class="row g-3 mt-1 mb-5 g-5 m-5" id="seccionesRecomendadas">
+            <div class="col-6 col-md-4 col-lg-2">
+                <div class="card h-100">
+                    <img src="images/rambo.webp" class="card-img-top" />
+                </div>
+            </div>
+
+            <div class="col-6 col-md-4 col-lg-2">
+                <div class="card h-100">
+                    <img src="images/piratas.webp" class="card-img-top" />
+                </div>
+            </div>
+
+            <div class="col-6 col-md-4 col-lg-2">
+                <div class="card h-100">
+                    <img src="images/viernes13.jpg" class="card-img-top" />
+                </div>
+            </div>
+
+            <div class="col-6 col-md-4 col-lg-2">
+                <div class="card h-100">
+                    <img src="images/resaconVegas.webp" class="card-img-top" />
+                </div>
+            </div>
+
+            <div class="col-6 col-md-4 col-lg-2">
+                <div class="card h-100">
+                    <img src="images/starwars.webp" class="card-img-top" />
+                </div>
+            </div>
+
+            <div class="col-6 col-md-4 col-lg-2">
+                <div class="card h-100">
+                    <img src="images/ryan.webp" class="card-img-top" />
+                </div>
+            </div>
+        </div>
+
+        <div class="row justify-content-center mt-5 mb-5">
+            <div class="col-9 col-md-8 col-lg-6">
+                <h2 class="text-center mb-3">Nuestro ranking histórico</h2>
+                <ul class="list-group d-flex text-center" style="width: 100%; font-size: large;">
+                    <li class="list-group-item">#1 En busca de la felicidad</li>
+                    <li class="list-group-item">#2 Fight Club</li>
+                    <li class="list-group-item">#3 Pulp Fiction</li>
+                    <li class="list-group-item">#4 Goodfellas</li>
+                    <li class="list-group-item">#5 Scarface</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="container mb-5">
+            <h2 class="text-center mb-4">Opiniones del Público</h2>
+
+            <div id="comentariosCarousel" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <div class="d-flex justify-content-center">
+                            <div class="card w-100" style="max-width: 24rem">
+                                <img src="images/hombre1.avif" class="card-img-top" />
+                                <div class="card-body">
+                                    <h5 class="card-title">Alejandro Martinez</h5>
+                                    <p class="card-text">"La película fue increíble..."</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="d-flex justify-content-center">
+                            <div class="card w-100" style="max-width: 24rem">
+                                <img src="images/mujer1.webp" class="card-img-top" />
+                                <div class="card-body">
+                                    <h5 class="card-title">Carla Lopez</h5>
+                                    <p class="card-text">"Una historia muy bien contada..."</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="d-flex justify-content-center">
+                            <div class="card w-100" style="max-width: 24rem">
+                                <img src="images/hombre2.webp" class="card-img-top" />
+                                <div class="card-body">
+                                    <h5 class="card-title">Marcos Martín</h5>
+                                    <p class="card-text">"Una autentica basura de pelicula..."</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#comentariosCarousel"
+                    data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon"></span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#comentariosCarousel"
+                    data-bs-slide="next">
+                    <span class="carousel-control-next-icon"></span>
+                </button>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-primary py-4">
+        <div class="container text-center">
+            <h3 class="fw-bold mb-4">CriticFilms</h3>
+
+            <div class="row text-center">
+                <div class="col-12 col-md-4 mb-4">
+                    <h5>Mapa del Sitio</h5>
+                    <ul class="list-unstyled">
+                        <li>
+                            <a href="index.html" class="text-black text-decoration-underline">Inicio</a>
+                        </li>
+                        <li>
+                            <a href="pagSecundarias/peliculas.html"
+                                class="text-black text-decoration-none">Películas</a>
+                        </li>
+                        <li>
+                            <a href="pagSecundarias/formulario.html" class="text-black text-decoration-none">Unete a
+                                nosotros</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="col-12 col-md-4 mb-4">
+                    <h5>Redes Sociales</h5>
+                    <div class="d-flex justify-content-center gap-3">
+                        <a href="https://www.facebook.com/?locale=es_ES%2F" class="text-black">
+                            <i class="fa-brands fa-facebook fa-2x"></i>
+                        </a>
+                        <a href="https://www.instagram.com/" class="text-black">
+                            <i class="fa-brands fa-instagram fa-2x"></i>
+                        </a>
+                        <a href="https://www.youtube.com/" class="text-black">
+                            <i class="fa-brands fa-youtube fa-2x"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-4 mb-4">
+                    <h5>Nos encontramos aquí</h5>
+                    <p>Calle Falsa 123<br />Email: contacto@criticfilms.com</p>
+                </div>
+            </div>
+
+            <hr>
+            <small>&copy; 2025 CriticFilms - Todos los derechos reservados</small>
+        </div>
+    </footer>
+</body>
+
+</html>

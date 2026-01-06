@@ -1,0 +1,311 @@
+$primary: #f2d000;
+$secondary: #000000;
+$success: #4caf50;
+$danger: #f44336;
+$warning: #ffc107;
+$info: #03a9f4;
+$light: #f8f9fa;
+$dark: #212121;
+
+@import "../bootstrap/scss/bootstrap";
+
+html,
+body {
+    overflow-x: hidden;
+}
+
+body {
+    background-color: $primary;
+    color: $secondary;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    margin: 0px;
+    padding: 0px;
+}
+
+main>* {
+    margin-bottom: 100px;
+}
+
+main {
+    background-color: $secondary;
+    color: $primary;
+}
+
+img {
+    border-radius: 8px;
+}
+
+#logo {
+    width: 100px;
+    height: 100px;
+}
+
+.presentacion {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 500px;
+    color: $primary;
+}
+
+.presentacion h1 {
+    width: 60%;
+}
+
+.parrafo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 0px;
+}
+
+// VARIABLES
+$card-radius: 15px;
+$card-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+$card-hover-shadow: 0 8px 18px rgba(0, 0, 0, 0.25);
+$transition-fast: 0.25s ease-in-out;
+
+// CARTAS GENERALES
+.card {
+    border: none;
+    border-radius: $card-radius;
+    box-shadow: $card-shadow;
+    overflow: hidden;
+    transition: transform $transition-fast, box-shadow $transition-fast;
+    background: white;
+    width: 200px;
+
+    &:hover {
+        transform: translateY(-5px);
+        box-shadow: $card-hover-shadow;
+    }
+
+    .card-body {
+        text-align: center;
+        padding: 1.2rem;
+
+        img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border-radius: $card-radius;
+            margin-bottom: 0.8rem;
+        }
+    }
+}
+
+.col.d-flex,
+.col-sm-12.d-flex,
+.col-md-6.d-flex,
+.col-lg-8.d-flex {
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+
+.articulo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.articulo h1,
+.articulo .h1 {
+    font-size: 24px;
+    width: 100%;
+}
+
+.articulo p {
+    font-size: 12px;
+    width: 90%;
+    margin-left: 5px;
+}
+
+.articulo img {
+    width: 90%;
+    height: 300px;
+    margin-left: 5px;
+}
+
+.carousel-item {
+    img {
+        width: 100%;
+        height: 520px;
+        object-fit: cover;
+        object-position: center;
+    }
+}
+
+.card {
+    .card-img-top {
+        width: 100%;
+        height: 250px;
+        object-fit: cover;
+        object-position: center;
+    }
+}
+
+@media (max-width: 768px) {
+    h1 {
+        text-align: center !important;
+    }
+}
+
+#seccionesRecomendadas .card {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+#seccionesRecomendadas .card-img-top {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 0 !important;
+}
+
+@media (max-width: 480px) {
+    #seccionesRecomendadas .card-img-top {
+        aspect-ratio: 2/3;
+        height: auto;
+    }
+}
+
+#usuarioAdmin {
+    justify-content: center;
+
+    .card {
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+@media (max-width: 468px) {
+    #usuarioAdmin .card {
+        width: 70%;
+        max-width: 200px;
+        height: 30%;
+        margin: auto;
+    }
+
+    #usuarioAdmin .card-img-top {
+        height: 100%;
+        width: 100%;
+        -o-object-fit: contain;
+        object-fit: contain;
+        -o-object-position: center;
+        object-position: center;
+        padding: 0 !important;
+        margin: 0 !important;
+        border-radius: 0 !important;
+    }
+}
+
+/* ---------- TARJETAS DE PELÍCULAS ------------ */
+
+#categoriaTabContent .card {
+    width: 130px;
+    height: 200px;
+    border-radius: 10px;
+    overflow: hidden;
+    padding: 0;
+}
+
+#categoriaTabContent .card .card-img-top {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    margin: 0 !important;
+    border-radius: 0 !important;
+}
+
+#categoriaTabContent .row {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+    #categoriaTabContent .row {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (min-width: 992px) {
+    #categoriaTabContent .row {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}
+
+.card.mx-auto.my-4 {
+    background: transparent !important;
+}
+
+#categoriaTabContent {
+    background-color: white;
+    padding: 1rem;
+    border-radius: 15px;
+}
+
+.nav-tabs {
+    .nav-link {
+        background-color: transparent;
+        transition: 0.2s ease-in-out;
+    }
+
+    .nav-link.active {
+        background-color: $primary !important;
+        color: $secondary !important;
+        font-weight: bold;
+    }
+}
+
+.navbar .nav-link {
+    padding-bottom: 4px;
+    transition: 0.2s ease-in-out;
+    margin: 15px;
+    font-size: 17px;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+h3 {
+    font-size: 35px;
+}
+
+h5 {
+    font-size: 20px;
+}
+
+@media (max-width: 767.98px) {
+    .navbar-collapse {
+        background-color: white !important;
+        background-color: white !important;
+        border-radius: 8px;
+        margin-top: 20px;
+    }
+}
+
+.cajaForm {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.cajaForm div {
+    display: flex;
+    flex-direction: column;
+    width: 48%;
+}
+
+.cajaForm input {
+    width: 100% !important;
+}
